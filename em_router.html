@@ -1,0 +1,32 @@
+<head>
+  <title>Routing App</title>
+</head>
+
+<template name="Layout">
+	<div class="container">
+		{{> yield}}
+	</div>
+</template>
+
+<template name="Blog">
+	
+	<div id="new-article">
+		<a href="/blog/new">
+			New Article
+		</a>
+	</div>
+
+	<ul>
+		{{#each articles}}
+			<li><a href="{{pathFor 'article.show'}}">{{title}}</a></li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="Article">
+	<h1>Article</h1>
+</template>
+
+<template name="NewArticle">
+	<h1>New Article</h1>
+</template>
